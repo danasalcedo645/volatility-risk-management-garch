@@ -1,29 +1,29 @@
 # Volatility & Risk Management (Peru ADRs) — GARCH(1,1)
 
-Proyecto de finanzas cuantitativas que estima volatilidad condicional mediante GARCH(1,1) y calcula medidas de riesgo (VaR y Expected Shortfall) para activos peruanos cotizados internacionalmente (BAP, BVN) usando Python.
+Quantitative finance project that estimates conditional volatility using a GARCH(1,1) model and computes risk measures (Value at Risk and Expected Shortfall) for internationally traded Peruvian assets (BAP, BVN) using Python.
 
-## Metodología
-- Descarga de precios diarios con yfinance (2015–2025)
-- Transformación a rendimientos logarítmicos
-- Evidencia visual de clustering de volatilidad
-- Estimación GARCH(1,1) con:
-  - Distribución Normal
-  - Distribución t-Student (colas pesadas)
-- Cálculo de VaR 95% y Expected Shortfall
-- Backtesting por proporción de violaciones
-- Comparación Normal vs t-Student (riesgo extremo)
+## Methodology
+- Daily price download using yfinance (2015–2025)
+- Log-return transformation
+- Visual evidence of volatility clustering
+- GARCH(1,1) estimation with:
+  - Normal distribution
+  - Student-t distribution (heavy tails)
+- 95% VaR and Expected Shortfall estimation
+- Backtesting through violation frequency
+- Normal vs Student-t comparison (extreme risk)
 
-## Resultados clave 
-- Persistencia alta de volatilidad (α+β ≈ 0.95)
-- Colas pesadas (ν ≈ 4.3)
-- VaR 95%: proporción de violaciones cercana al 5% teórico
-- t-Student captura mejor pérdidas extremas que Normal
+## Key Results
+- High volatility persistence (α+β ≈ 0.95)
+- Heavy-tailed behavior (ν ≈ 4.3)
+- 95% VaR: violation rate close to the theoretical 5%
+- Student-t captures extreme losses better than Normal distribution
 
-## Herramientas
+## Tools
 Python, yfinance, pandas, numpy, matplotlib, arch, scipy
 
 ## Outputs
-Se generan archivos en /data:
+The following files are generated in /data:
 - raw_prices.csv
 - log_returns.csv
 - clustering_volatilidad.png
@@ -31,7 +31,7 @@ Se generan archivos en /data:
 - comparacion_modelos.csv
 - comparacion_volatilidades.png
 
-## Cómo ejecutar
+## How to Run
 ```bash
 pip install -r requirements.txt
 py main.py
@@ -47,3 +47,4 @@ matplotlib
 arch
 scipy
 ```
+
